@@ -69,7 +69,7 @@ function normalizeLetter(letter) {
 
 async function loadWords() {
     try {
-        const response = await fetch('/games/jogo-da-forca/words.json');
+        const response = await fetch('words.json');
         if (!response.ok) throw new Error('Falha ao carregar words.json');
         words = (await response.json()).words;
         if (!words || words.length === 0) throw new Error('Nenhuma palavra encontrada no JSON');
