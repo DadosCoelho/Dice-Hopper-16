@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Forca</title>
+  <link rel="stylesheet" href="/games/jogo-da-forca/styles.css">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/165790519?v=4">
+</head>
+<body>
+  <!-- Botão de Voltar -->
+  <button id="back-btn" title="Voltar ao Início">⬅️</button>
+  
+  <!-- Botão de Alternar Tema -->
+  <button id="theme-toggle">🌓</button>
+  
+  <div class="container" id="start-screen">
+    <h1>Jogo da Forca</h1>
+    <label for="level">Escolha o Nível:</label>
+    <select id="level">
+      <option value="muito_facil">Muito Fácil</option>
+      <option value="facil">Fácil</option>
+      <option value="medio">Médio</option>
+      <option value="dificil">Difícil</option>
+      <option value="muito_dificil">Muito Difícil</option>
+    </select>
+    <label for="mode">Escolha o Modo:</label>
+    <select id="mode">
+      <option value="normal">Normal</option>
+      <option value="timer">Temporizador</option>
+    </select>
+    <button id="start-game">Iniciar Jogo</button>
+  </div>
+  
+  <div class="container" id="game-container">
+    <h1>Jogo da Forca</h1>
+    
+    <div class="game-info">
+      <div class="stat-box" id="score">Pontuação: 0</div>
+      <div class="stat-box" id="level-display">Nível: </div>
+      <div class="stat-box" id="round">Rodada: 1/10</div>
+      <div class="stat-box" id="timer-display" style="display: none;">Tempo: 30s</div>
+    </div>
+    
+    <div class="game-left-column">
+      <div id="hangman-container">
+        <div id="hangman">
+          <div id="pole" class="hangman-part structure-part"></div>
+          <div id="top-bar" class="hangman-part structure-part"></div>
+          <div id="rope" class="hangman-part structure-part"></div>
+          <div id="head" class="hangman-part body-part"></div>
+          <div id="body" class="hangman-part body-part"></div>
+          <div id="left-arm" class="hangman-part body-part"></div>
+          <div id="right-arm" class="hangman-part body-part"></div>
+          <div id="left-leg" class="hangman-part body-part"></div>
+          <div id="right-leg" class="hangman-part body-part"></div>
+        </div>
+      </div>
+      <div id="game-info-container">
+        <div id="word-display"></div>
+        <div id="wrong-letters">Letras erradas: <span id="wrong-letters-list"></span></div>
+      </div>
+    </div>
+    
+    <div id="hint"></div>
+    <div id="message"></div>
+    
+    <div class="game-right-column">
+      <div id="keyboard"></div>
+      <button id="restart-game" style="display: none;">Voltar ao Início</button>
+    </div>
+  </div>
+  <script src="/games/jogo-da-forca/script.js"></script>
+</body>
+</html>

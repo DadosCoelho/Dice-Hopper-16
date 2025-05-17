@@ -1,0 +1,206 @@
+:root {
+  --primary-color: #5c6bc0;
+  --secondary-color: #7986cb;
+  --accent-color: #5c6bc0;
+  --text-color: #263238;
+  --light-text: #ffffff;
+  --background-color: #eceff1;
+  --card-bg: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  background-image: linear-gradient(45deg, #c5cae9 25%, transparent 25%, transparent 75%, #c5cae9 75%, #c5cae9),
+                    linear-gradient(45deg, #c5cae9 25%, transparent 25%, transparent 75%, #c5cae9 75%, #c5cae9);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-color);
+  position: relative; /* Necessário para posicionar o botão de tema */
+}
+
+.container {
+  text-align: center;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow); /* Adiciona sombra à tabela */
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  font-weight: bold;
+}
+
+td {
+  color: var(--text-color);
+}
+
+/* Estilo para a última linha da tabela */
+#games-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.game-link {
+  color: var(--accent-color);
+  cursor: pointer;  /* Muda o cursor para pointer */
+  font-weight: bold; /* Destaca o texto do link */
+  transition: all 0.3s ease; /* Transição suave para hover */
+  display: block; /* Faz o link ocupar toda a célula */
+  padding: 15px; /* Ajusta o padding para a área clicável */
+  margin: -15px; /* Compensa o padding para não aumentar a célula */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  text-align: center; /* Centraliza o texto */
+  font-size: 2em; /* Aumenta o tamanho da fonte */
+}
+
+.game-link:hover {
+  text-decoration: underline;
+  color: #a6aac1;
+  background-color: rgba(0, 0, 0, 0.05); /* Adiciona um leve fundo ao passar o mouse */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao passar o mouse */
+  transform: scale(1.2); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo para o botão de alternar tema */
+#theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+
+/* Dark theme */
+body.dark-theme {
+  --primary-color: #7c4dff;
+  --secondary-color: #b388ff;
+  --accent-color: #7c4dff;
+  --text-color: #eceff1;
+  --light-text: #ffffff;
+  --background-color: #263238;
+  --card-bg: #37474f;
+}
+
+body.dark-theme {
+  background-image: linear-gradient(45deg, #37474f 25%, transparent 25%, transparent 75%, #37474f 75%, #37474f),
+                    linear-gradient(45deg, #37474f 25%, transparent 25%, transparent 75%, #37474f 75%, #37474f);
+}
+
+body.dark-theme table {
+  border-color: var(--secondary-color); /* Ajusta a cor da borda da tabela no tema escuro */
+}
+
+body.dark-theme th, body.dark-theme td {
+  border-bottom-color: var(--secondary-color); /* Ajusta a cor da borda inferior das células */
+}
+
+body.dark-theme .game-link:hover {
+  background-color: rgba(255, 255, 255, 0.05); /* Fundo hover mais claro no tema escuro */
+}
+
+
+@media (forced-colors: active) {
+  th, td, .game-link, #theme-toggle {
+    forced-color-adjust: none;
+    background-color: Canvas;
+    color: CanvasText;
+    border: 2px solid CanvasText;
+  }
+  th {
+    background-color: ButtonFace;
+    color: ButtonText;
+  }
+  .game-link {
+    color: LinkText;
+  }
+  #theme-toggle {
+    background-color: ButtonFace;
+    color: ButtonText;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  th, td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .game-link {
+    padding: 10px; /* Ajusta o padding para telas menores */
+    margin: -10px; /* Compensa o padding */
+    
+  }
+  #theme-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    top: 5px;
+    right: 5px;
+  }
+}

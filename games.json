@@ -1,0 +1,5 @@
+[
+  { "name": "Jogo da Forca", "folder": "Jogo-Da-Forca" },
+  { "name": "Sudoku", "folder": "sudoku" },
+  { "name": "Jogo da Velha", "folder": "tic-tac-toe" }
+]

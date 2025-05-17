@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="/games/tic-tac-toe/style.css">
+</head>
+<body>
+  <button id="back-btn" title="Voltar ao Início">⬅️</button>
+  <button id="theme-toggle" title="Alternar Tema">🌓</button>
+  <div class="container">
+    <h1>Jogo da Velha</h1>
+    <div id="menu">
+      <h2>Escolha o Modo</h2>
+      <select id="game-mode">
+        <option value="pvp">Jogador vs. Jogador</option>
+        <option value="pvc">Jogador vs. Computador</option>
+      </select>
+      <div id="difficulty" style="display: none;">
+        <h3>Nível de Dificuldade</h3>
+        <select id="difficulty-level">
+          <option value="easy">Fácil</option>
+          <option value="medium">Médio</option>
+          <option value="difficult">Difícil</option>
+        </select>
+      </div>
+      <button id="start-btn">Iniciar Jogo</button>
+    </div>
+    <div id="game" style="display: none;">
+      <h3 id="current-player">Jogador atual: X</h3>
+      <div id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+      </div>
+      <p id="message"></p>
+      <button id="restart-btn">Reiniciar Jogo</button>
+    </div>
+  </div>
+  <script src="/games/tic-tac-toe/script.js"></script>
+</body>
+</html>
